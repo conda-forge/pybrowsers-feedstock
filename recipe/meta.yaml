@@ -1,5 +1,5 @@
 {% set name = "pybrowsers" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pybrowsers-{{ version }}.tar.gz
-  sha256: 2ddecc42b1d892db3d167df15744fcc7c13b9856acc46d014a2824e3981c8492
+  sha256: 58326ca65a5053676309443244df4fd1e1d62af05e8265602214894efb31c073
 
 build:
   noarch: python
