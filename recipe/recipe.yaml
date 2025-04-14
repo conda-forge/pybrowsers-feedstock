@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: pybrowsers
+  version: 0.8.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pybrowsers-${{ version }}.tar.gz
+  sha256: 5207ba914b0c5166e52a543e1c48eb11c73fd43cab4ec99a92d0752a2310fd9d
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - poetry-core >=2.0.0,<3.0.0
+    - python ${{ python_min }}
+  run:
+    - python >=${{ python_min }}
+    - pywin32 >=303,<311
+    - pyxdg >=0.27,<0.29
+
+tests:
+  - python:
+      imports:
+        - browsers
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}
+    script:
+      - pip check
+
+about:
+  summary: Python library for detecting and launching browsers
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/roniemartinez/browsers
+
+extra:
+  recipe-maintainers:
+    - thewchan
