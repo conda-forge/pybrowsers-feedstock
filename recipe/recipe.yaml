@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - poetry-core >=2.0.0,<3.0.0
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
     - pywin32 >=303,<311
@@ -31,12 +31,8 @@ tests:
   - python:
       imports:
         - browsers
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}
-    script:
-      - pip check
+      pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   summary: Python library for detecting and launching browsers
