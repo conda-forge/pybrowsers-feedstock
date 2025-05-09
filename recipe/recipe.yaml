@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pybrowsers
-  version: "0.10.0"
+  version: "1.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pybrowsers-${{ version }}.tar.gz
-  sha256: a1c86e1239b70b8a766a96aec53b98e42a2fe68f310a198523d72b4f0c64a546
+  sha256: a59b90438a9bb0f24297a1de9643684cd3b47606141dde872f7542092e5be2bd
 
 build:
   number: 0
